@@ -1,31 +1,77 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Minisite exemple — une page simple, responsive et accessible." />
+    <meta name="theme-color" content="#071024" />
+    <title>MiniSite — Exemple</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
     <div class="container">
-      <header class="site-header">
-        <div class="brand"><span class="logo">M</span> Minisite</div>
-        <nav class="nav"><a href="#">Accueil</a> <a href="#">À propos</a></nav>
+      <header class="site-header" role="banner">
+        <div class="brand"><span class="logo" aria-hidden="true">M</span> <span class="spaced">Minisite</span></div>
+        <nav class="nav" aria-label="Navigation principale">
+          <ul style="list-style:none;display:flex;gap:8px;padding:0;margin:0">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#features">Fonctionnalités</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </header>
 
-      <section class="hero">
-        <div class="left">
-          <h1>Bienvenue</h1>
-          <p>Description...</p>
-          <a class="cta" href="#">Démarrer</a>
-        </div>
-      </section>
+      <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="left">
+            <p class="kicker">Prototype</p>
+            <h1 id="hero-title">Un minisite rapide et responsive</h1>
+            <p class="muted">Template minimal avec HTML sémantique et CSS moderne. Adapté aux petits projets et aux landing pages.</p>
+            <p class="mt-16">
+              <a class="cta" href="#features">Découvrir</a>
+              <a class="badge" href="#contact">Contact</a>
+            </p>
+          </div>
+          <div class="hero-right">
+            <img src="https://via.placeholder.com/420x260.png?text=Visuel" alt="Aperçu du site">
+          </div>
+        </section>
 
-      <div class="grid">
-        <div class="card">
-          <h3>Titre</h3>
-          <p>Contenu...</p>
-        </div>
-      </div>
+        <section id="features" class="mb-16">
+          <h2 class="kicker">Fonctionnalités</h2>
+          <div class="grid">
+            <article class="card" aria-labelledby="f1">
+              <h3 id="f1">Rapide</h3>
+              <p>Structure légère, optimisée pour un rendu instantané.</p>
+            </article>
+            <article class="card" aria-labelledby="f2">
+              <h3 id="f2">Accessible</h3>
+              <p>Navigation clavier, contrastes et structure sémantique.</p>
+            </article>
+            <article class="card" aria-labelledby="f3">
+              <h3 id="f3">Responsive</h3>
+              <p>Grille fluide et breakpoints pour mobile et desktop.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2 class="kicker">Contact</h2>
+          <p class="muted small">Envoyez un email à <a href="mailto:hello@example.com">hello@example.com</a></p>
+        </section>
+      </main>
+
+      <footer class="site-footer" role="contentinfo">
+        <div>© <span id="year"></span> Minisite — Tous droits réservés</div>
+        <div class="muted small">Créé avec soin</div>
+      </footer>
     </div>
+
+    <script>
+      // petit script pour l'année dans le footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

@@ -245,6 +245,33 @@ img {
   display: block;
 }
 
+/* Skip link (accessibilité) */
+.skip-link{
+  position:fixed;
+  left:8px;
+  top:8px;
+  background:#031022;
+  color:var(--text);
+  padding:8px 12px;
+  border-radius:8px;
+  transform:translateY(-120%);
+  transition:transform 180ms ease;
+  z-index:9999;
+}
+.skip-link:focus{transform:translateY(0);outline:none}
+
+/* Hero right image column */
+.hero-right{flex:0 0 420px;display:flex;align-items:center;justify-content:center}
+.hero-right img{border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.5)}
+
+@media (max-width:920px){
+  .hero-right{flex:0 0 320px}
+}
+@media (max-width:720px){
+  .hero-right{width:100%;order:2}
+  .hero{gap:18px}
+}
+
 /* Layout spacing utilities */
 .mb-8 {
   margin-bottom: 8px;
