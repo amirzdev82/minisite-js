@@ -1,0 +1,364 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap 4 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <title>Adhoc</title>
+    <style>
+      /* ===== Corrections HTML5 ===== */
+
+      /* 1. Skip link accessibilité */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #000;
+        color: #fff;
+        padding: 8px 16px;
+        z-index: 9999;
+        transition: top 0.2s;
+      }
+      .skip-link:focus {
+        top: 0;
+      }
+
+      /* 2. Hero section (remplace le jumbotron déprécié) */
+      .hero {
+        background-color: #6c757d;
+        color: #fff;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+      .hero .hero-tagline {
+        text-align: right;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      /* 3. Section citations */
+      blockquote.testimonial {
+        font-size: 1.25rem;
+        border-left: 4px solid #6c757d;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-style: italic;
+      }
+      figcaption.testimonial-author {
+        font-size: 0.95rem;
+        color: #555;
+        padding-left: 1.5rem;
+      }
+
+      /* 4. Section "Why Adhoc" */
+      .why-adhoc-title {
+        line-height: 3;
+      }
+      .reasons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      .reason-card {
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      .reason-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+
+      /* 5. Section "Meet the Team" */
+      .team-title {
+        background-color: #212529;
+        border-radius: 50px;
+        color: #fff;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      /* 6. Footer */
+      .site-footer {
+        text-align: center;
+        padding: 1.5rem 0;
+        margin-top: 2rem;
+        border-top: 1px solid #dee2e6;
+        color: #555;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Skip link accessibilité (HTML5) -->
+    <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+    <!-- ===== HEADER / NAVIGATION ===== -->
+    <!-- HTML5 : <header> + <nav> avec role et aria-label -->
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light"
+        aria-label="Navigation principale"
+      >
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://content.codecademy.com/courses/learn-bootstrap-4/adhoc/logo.png"
+            alt="Adhoc — retour à l'accueil"
+            height="30"
+            width="auto"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarMenu"
+          aria-controls="navbarMenu"
+          aria-expanded="false"
+          aria-label="Ouvrir le menu de navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <!-- HTML5 : <ul> dans <nav> = liste de liens, aria-current sur page active -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-current="page">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">À propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ===== MAIN (HTML5) ===== -->
+    <main id="main-content">
+      <!-- ===== HERO (remplace le jumbotron Bootstrap déprécié en BS5) ===== -->
+      <!-- HTML5 : <section> sémantique avec aria-labelledby -->
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Jumbotron</h1>
+        <p>Ce conteneur élargis la page</p>
+        <!-- CORRIGÉ : h2 ne peut pas être dans un <span> ; <strong><em> dans le bon ordre -->
+        <p class="hero-tagline">
+          <strong><em>Ce site est le meilleur</em></strong>
+        </p>
+      </section>
+
+      <!-- ===== CONTENU PRINCIPAL ===== -->
+      <div class="container my-5">
+        <!-- Témoignage — HTML5 : <figure> + <blockquote> + <figcaption> -->
+        <section aria-labelledby="testimonial-title">
+          <h2 id="testimonial-title" class="sr-only">Témoignage client</h2>
+          <div class="row">
+            <div class="col">
+              <figure>
+                <blockquote class="testimonial">
+                  <p>
+                    "Thanks to Adhoc we now have beautiful and faithful service
+                    every day. Our customers are happy and engagement has
+                    drastically increased. Highly recommend!"
+                  </p>
+                </blockquote>
+                <figcaption class="testimonial-author">
+                  — Dave Ellavar, <cite>Academy of Code</cite>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Pourquoi Adhoc ? -->
+        <section aria-labelledby="why-title">
+          <div class="row">
+            <div class="col">
+              <h2 id="why-title" class="why-adhoc-title">Why Adhoc?</h2>
+            </div>
+          </div>
+
+          <!-- CORRIGÉ : les <img> étaient de fausses balises imbriquées dans des <div> -->
+          <!-- HTML5 : <article> pour chaque carte, <figure>/<img> bien formés -->
+          <div class="reasons-grid">
+            <article class="reason-card">
+              <figure>
+                <img
+                  src="https://content.codecademy.com/courses/learn-bootstrap-4/adhoc/fun.png"
+                  alt="Service fun et convivial"
+                />
+                <figcaption>Fun</figcaption>
+              </figure>
+            </article>
+            <article class="reason-card">
+              <figure>
+                <img
+                  src="https://content.codecademy.com/courses/learn-bootstrap-4/adhoc/fun.png"
+                  alt="Service rapide et efficace"
+                />
+                <figcaption>Rapide</figcaption>
+              </figure>
+            </article>
+            <article class="reason-card">
+              <figure>
+                <img
+                  src="https://content.codecademy.com/courses/learn-bootstrap-4/adhoc/fun.png"
+                  alt="Service fiable et de confiance"
+                />
+                <figcaption>Fiable</figcaption>
+              </figure>
+            </article>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Équipe -->
+        <section aria-labelledby="team-title">
+          <h2 id="team-title" class="team-title">Meet the Team</h2>
+
+          <!-- Carrousel Bootstrap — CORRIGÉ : suppression des styles invalides (width/margin:center) -->
+          <div
+            id="teamCarousel"
+            class="carousel slide"
+            data-ride="carousel"
+            aria-label="Photos de l'équipe"
+          >
+            <!-- Indicateurs (accessibilité) -->
+            <ol class="carousel-indicators">
+              <li
+                data-target="#teamCarousel"
+                data-slide-to="0"
+                class="active"
+                aria-label="Slide 1"
+              ></li>
+              <li
+                data-target="#teamCarousel"
+                data-slide-to="1"
+                aria-label="Slide 2"
+              ></li>
+              <li
+                data-target="#teamCarousel"
+                data-slide-to="2"
+                aria-label="Slide 3"
+              ></li>
+              <li
+                data-target="#teamCarousel"
+                data-slide-to="3"
+                aria-label="Slide 4"
+              ></li>
+            </ol>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://content.codecademy.com/courses/learn-bootstrap-4/adhoc/brian.png"
+                  class="d-block w-100"
+                  alt="Photo de Brian, membre de l'équipe"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://content.codecademy.com/courses/learn-bootstrap-4/adhoc/brian.png"
+                  class="d-block w-100"
+                  alt="Photo de Brian, membre de l'équipe"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://content.codecademy.com/courses/learn-bootstrap-4/adhoc/brian.png"
+                  class="d-block w-100"
+                  alt="Photo de Brian, membre de l'équipe"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://content.codecademy.com/courses/learn-bootstrap-4/adhoc/brian.png"
+                  class="d-block w-100"
+                  alt="Photo de Brian, membre de l'équipe"
+                />
+              </div>
+            </div>
+
+            <!-- Contrôles du carrousel -->
+            <a
+              class="carousel-control-prev"
+              href="#teamCarousel"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Précédent</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#teamCarousel"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Suivant</span>
+            </a>
+          </div>
+        </section>
+      </div>
+      <!-- /.container -->
+    </main>
+
+    <!-- ===== FOOTER (HTML5 : <footer> sémantique) ===== -->
+    <footer class="site-footer" role="contentinfo">
+      <p>
+        <small>&copy; 2019 Adhoc. Tous droits réservés.</small>
+      </p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
